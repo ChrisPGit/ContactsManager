@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.API\\ContactsManager.API.csproj": {}
+    "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.API\\ContactsManager.API.csproj": {
+    "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.API\\ContactsManager.API.csproj",
-        "projectName": "ContactsManager.API",
-        "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.API\\ContactsManager.API.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj",
+        "projectName": "ContactsManager.Data",
+        "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj",
         "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.API\\obj\\",
+        "outputPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -43,17 +43,6 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
-            "Microsoft.AspNetCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
-            "Microsoft.AspNetCore.Razor.Design": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[2.2.6, )"
