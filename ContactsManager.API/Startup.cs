@@ -34,6 +34,9 @@ namespace ContactsManager.API
             services.AddDbContext<ContactsManagerDbContext>(o =>
                 o.UseSqlServer(Configuration["connectionStrings:ContactsManagerConnectionString"]));
 
+            services.AddDbContext<ContactsManagerDbContext>(opt =>
+                opt.UseInMemoryDatabase("ContactsManager"));
+
             services.AddTransient<ICompanyRepository, CompanyRepository>();
             services.AddTransient<IContactRepository, ContactRepository>();
         }
