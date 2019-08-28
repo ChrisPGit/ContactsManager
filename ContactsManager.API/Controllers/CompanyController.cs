@@ -80,7 +80,7 @@ namespace ContactsManager.API.Controllers
 
             if(!await _companyRepository.Save())
             {
-                return StatusCode(500, "A Problem happened whil handling your request"); 
+                return StatusCode(500, "A Problem happened while handling your request"); 
             }
 
             return Ok();
@@ -105,7 +105,7 @@ namespace ContactsManager.API.Controllers
 
             if (! await _companyRepository.Save())
             {
-                return StatusCode(500, "A Problem happened whil handling your request");
+                return StatusCode(500, "A Problem happened while handling your request");
             }
 
             return Ok();
@@ -130,7 +130,7 @@ namespace ContactsManager.API.Controllers
 
             if(!await _companyRepository.Save())
             {
-                return StatusCode(500, "A Problem happened whil handling your request");
+                return StatusCode(500, "A Problem happened while handling your request");
             }
 
             return Ok();
@@ -155,7 +155,7 @@ namespace ContactsManager.API.Controllers
 
             if (!await _companyRepository.Save())
             {
-                return StatusCode(500, "A Problem happened whil handling your request");
+                return StatusCode(500, "A Problem happened while handling your request");
             }
 
             return Ok();
