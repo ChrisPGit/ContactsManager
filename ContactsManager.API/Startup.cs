@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ContactsManager.API.Entities;
+using ContactsManager.API.Helpers;
+using ContactsManager.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,10 +33,12 @@ namespace ContactsManager.API
 
             services.AddDbContext<ContactsManagerDbContext>(o =>
                 o.UseSqlServer(Configuration["connectionStrings:ContactsManagerConnectionString"]));
+
+            services.AddTransient<ICompanyRepository, CompanyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ContactsManagerDbContext contactsManagerDbContext)
         {
             if (env.IsDevelopment())
             {
@@ -45,6 +49,8 @@ namespace ContactsManager.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            contactsManagerDbContext.EnsureSeedDataForContext();
 
             app.UseHttpsRedirection();
             app.UseMvc();

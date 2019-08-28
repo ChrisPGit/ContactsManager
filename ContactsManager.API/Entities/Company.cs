@@ -16,7 +16,8 @@ namespace ContactsManager.API.Entities
         [Required]
         public string VAT { get; set; }
 
-        public virtual List<CompanyAddress> CompanyAddresses { get; set; }
+        public ICollection<CompanyAddress> CompanyAddresses { get; set; }
+        = new List<CompanyAddress>();
         [NotMapped]
         public virtual List<Contact> Contacts { get; set; }
     }
