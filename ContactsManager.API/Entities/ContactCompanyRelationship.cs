@@ -6,6 +6,7 @@ namespace ContactsManager.API.Entities
     public class ContactCompanyRelationship
     {
         [Key]
+        public int ContactCompanyIds { get; set; }
         public int ContactId { get; set; }
         public int CompanyId { get; set; }
 

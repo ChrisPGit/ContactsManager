@@ -66,7 +66,8 @@ namespace ContactsManager.API.Services
                 .Where(c => c.CompanyId == companyId)
                 .Select(c => c.ContactId).ToListAsync();
             return await _context.Contacts
-                .Where(c => contactsIds.Contains(c.Id)).ToListAsync();
+                .Where(c => contactsIds.Contains(c.Id))
+                .ToListAsync();
         }
 
         public async Task<bool> Save()

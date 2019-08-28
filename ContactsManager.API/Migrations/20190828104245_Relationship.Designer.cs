@@ -3,14 +3,16 @@ using ContactsManager.API.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ContactsManager.API.Migrations
 {
     [DbContext(typeof(ContactsManagerDbContext))]
-    partial class ContactsManagerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190828104245_Relationship")]
+    partial class Relationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,25 +123,6 @@ namespace ContactsManager.API.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("ContactsManager.API.Entities.ContactCompanyRelationship", b =>
-                {
-                    b.Property<int>("ContactCompanyIds")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompanyId");
-
-                    b.Property<int>("ContactId");
-
-                    b.HasKey("ContactCompanyIds");
-
-                    b.HasIndex("CompanyId");
-
-                    b.HasIndex("ContactId");
-
-                    b.ToTable("ContactCompanyRelationships");
-                });
-
             modelBuilder.Entity("ContactsManager.API.Entities.CompanyAddress", b =>
                 {
                     b.HasOne("ContactsManager.API.Entities.CompanyAddressType", "CompanyAdressType")
@@ -150,19 +133,6 @@ namespace ContactsManager.API.Migrations
                     b.HasOne("ContactsManager.API.Entities.Company", "Company")
                         .WithMany("CompanyAddresses")
                         .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ContactsManager.API.Entities.ContactCompanyRelationship", b =>
-                {
-                    b.HasOne("ContactsManager.API.Entities.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ContactsManager.API.Entities.Contact", "Contact")
-                        .WithMany()
-                        .HasForeignKey("ContactId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

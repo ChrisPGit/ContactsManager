@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContactsManager.API.Entities
@@ -16,5 +17,6 @@ namespace ContactsManager.API.Entities
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<CompanyAddress> CompanyAddresses { get; set; }
         public DbSet<ContactCompanyRelationship> ContactCompanyRelationships { get; set; }
+
     }
 }
