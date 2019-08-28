@@ -30,6 +30,7 @@ namespace ContactsManager.Tests
         public void GetAllWhenCalledReturnsListCompanies()
         {
             var companies = _controller.GetAllCompanies();
+            string test = string.Empty;
 
             Assert.IsType<Task<ActionResult<List<Company>>>>(companies);
         }
