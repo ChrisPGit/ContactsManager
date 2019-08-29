@@ -1,4 +1,4 @@
-﻿using ContactsManager.API.Entities;
+﻿using ContactsManager.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;

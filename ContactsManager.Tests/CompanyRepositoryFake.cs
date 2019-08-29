@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using ContactsManager.API.Entities;
+using ContactsManager.Data;
 using ContactsManager.API.Services;
 
 namespace ContactsManager.Tests
@@ -37,13 +37,13 @@ namespace ContactsManager.Tests
                 {
                     Id = 1,
                     Name = "Test",
-                    VAT = "TestVat",
+                    Vat = "TestVat",
                 },
                  new Company
                 {
                     Id = 2,
                     Name = "Test2",
-                    VAT = "TestVat2",
+                    Vat = "TestVat2",
                 },
 
 
@@ -56,7 +56,7 @@ namespace ContactsManager.Tests
             {
                 Id = 1,
                 Name = "Test",
-                VAT = "TestVat",
+                Vat = "TestVat",
             };
         }
 
