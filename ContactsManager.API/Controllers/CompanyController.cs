@@ -1,8 +1,7 @@
 ﻿using ContactsManager.API.Dtos;
-using ContactsManager.API.Entities;
+using ContactsManager.Data;
 using ContactsManager.API.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -62,9 +61,9 @@ namespace ContactsManager.API.Controllers
             var company = new Company
             {
                 Name = companyForCreation.Name,
-                ESite = companyForCreation.ESite,
+                Esite = companyForCreation.ESite,
                 HomePhone = companyForCreation.HomePhone,
-                VAT = companyForCreation.VAT
+                Vat = companyForCreation.VAT
             };
 
             company.CompanyAddresses.Add(new CompanyAddress

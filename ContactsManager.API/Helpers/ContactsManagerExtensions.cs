@@ -1,4 +1,4 @@
-﻿using ContactsManager.API.Entities;
+﻿using ContactsManager.Data;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +6,7 @@ namespace ContactsManager.API.Helpers
 {
     public static class ContactsManagerExtensions
     {
-        public static void EnsureSeedDataForContext(this ContactsManagerDbContext context)
+        public static void EnsureSeedDataForContext(this ContactsManagerContext context)
         {
             if (context.CompanyAddressTypes.Any())
             {

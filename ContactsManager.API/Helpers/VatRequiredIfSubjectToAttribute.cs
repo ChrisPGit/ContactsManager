@@ -1,4 +1,4 @@
-﻿using ContactsManager.API.Entities;
+﻿using ContactsManager.API.Dtos;
 using System.ComponentModel.DataAnnotations;
 
 namespace ContactsManager.API
@@ -11,7 +11,7 @@ namespace ContactsManager.API
         protected override ValidationResult IsValid(
             object value, ValidationContext validationContext)
         {
-            var contact = (Contact)validationContext.ObjectInstance;
+            var contact = (ContactForCreation)validationContext.ObjectInstance;
             if (contact.SubjectToVAT && string.IsNullOrWhiteSpace((string)value))
             {
                 return new ValidationResult("The VAT number can be null or empty when a contact is subjetc to VAT");

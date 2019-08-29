@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContactsManager.API.Entities;
 using ContactsManager.API.Helpers;
 using ContactsManager.API.Services;
+using ContactsManager.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,18 +31,18 @@ namespace ContactsManager.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<ContactsManagerDbContext>(o =>
+            services.AddDbContext<ContactsManagerContext>(o =>
                 o.UseSqlServer(Configuration["connectionStrings:ContactsManagerConnectionString"]));
 
-            services.AddDbContext<ContactsManagerDbContext>(opt =>
-                opt.UseInMemoryDatabase("ContactsManager"));
+            //services.AddDbContext<ContactsManagerDbContext>(opt =>
+            //    opt.UseInMemoryDatabase("ContactsManager"));
 
             services.AddTransient<ICompanyRepository, CompanyRepository>();
             services.AddTransient<IContactRepository, ContactRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ContactsManagerDbContext contactsManagerDbContext)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ContactsManagerContext contactsManagerContext)
         {
             if (env.IsDevelopment())
             {
@@ -54,7 +54,7 @@ namespace ContactsManager.API
                 app.UseHsts();
             }
 
-            contactsManagerDbContext.EnsureSeedDataForContext();
+            contactsManagerContext.EnsureSeedDataForContext();
 
             app.UseHttpsRedirection();
             app.UseMvc();
