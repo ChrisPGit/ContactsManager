@@ -8,3 +8,4 @@ C:\Users\chris\source\repos\ContactsManager\ContactsManager.Data\bin\Debug\netco
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.Data\bin\Debug\netcoreapp2.2\ContactsManager.Data.pdb
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.Data\obj\Debug\netcoreapp2.2\ContactsManager.Data.dll
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.Data\obj\Debug\netcoreapp2.2\ContactsManager.Data.pdb
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Data\obj\Debug\netcoreapp2.2\ContactsManager.Data.csprojAssemblyReference.cache

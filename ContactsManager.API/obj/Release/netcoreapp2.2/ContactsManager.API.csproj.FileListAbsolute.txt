@@ -1,0 +1,17 @@
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Release\netcoreapp2.2\ContactsManager.API.deps.json
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Release\netcoreapp2.2\ContactsManager.API.runtimeconfig.json
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Release\netcoreapp2.2\ContactsManager.API.runtimeconfig.dev.json
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Release\netcoreapp2.2\ContactsManager.API.dll
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Release\netcoreapp2.2\ContactsManager.API.pdb
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Release\netcoreapp2.2\ContactsManager.Data.dll
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Release\netcoreapp2.2\ContactsManager.Data.pdb
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.csprojAssemblyReference.cache
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.csproj.CoreCompileInputs.cache
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.RazorAssemblyInfo.cache
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.RazorAssemblyInfo.cs
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.AssemblyInfoInputs.cache
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.AssemblyInfo.cs
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.RazorTargetAssemblyInfo.cache
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.csproj.CopyComplete
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.dll
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Release\netcoreapp2.2\ContactsManager.API.pdb
