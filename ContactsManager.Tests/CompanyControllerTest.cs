@@ -1,5 +1,5 @@
 using ContactsManager.API.Controllers;
-using ContactsManager.API.Entities;
+using ContactsManager.Data;
 using ContactsManager.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
