@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactsManager.Data.Repositories
+namespace ContactsManager.Data
 {
     public class ContactCompanyRelationshipRepository : IContactCompanyRelationshipRepository
     {

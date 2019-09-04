@@ -41,10 +41,9 @@ namespace ContactsManager.API
             services.AddTransient<IRepository<Company>, Repository<Company>>();
             services.AddTransient<IRepository<Contact>, Repository<Contact>>();
             services.AddTransient<IRepository<CompanyAddress>, Repository<CompanyAddress>>();
+            services.AddTransient<IContactCompanyRelationshipRepository, ContactCompanyRelationshipRepository>();
             services.AddTransient<ICompanyService, CompanyService>();
             services.AddTransient<IContactService, ContactService>();
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
