@@ -1,4 +1,5 @@
-﻿using ContactsManager.Core.Dtos;
+﻿using AutoMapper;
+using ContactsManager.Core.Dtos;
 using ContactsManager.Core.Entities;
 using ContactsManager.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -12,39 +13,48 @@ namespace ContactsManager.API.Controllers
     [ApiController]
     public class CompanyController : Controller
     {
-        private ICompanyService _companyService;
+        private readonly ICompanyService _companyService;
+        private readonly IMapper _mapper;
 
-        public CompanyController(ICompanyService companyRepository)
+        public CompanyController(ICompanyService companyRepository, IMapper mapper)
         {
             _companyService = companyRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Company>>> GetAllCompanies()
+        public async Task<ActionResult<List<CompanyToShow>>> GetAllCompanies()
         {
             var companies = await _companyService.GetAllCompanies();
-
+            
             if (!companies.Any())
             {
                 return NotFound();
             }
 
-            return companies;
+            var companiesToShow = _mapper.Map<List<CompanyToShow>>(companies);
+
+            return companiesToShow;
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Company>> GetCompany(int id)
+        //public async Task<ActionResult<Company>> GetCompany(int id)
+        public async Task<ActionResult<CompanyToShow>> GetCompany(int id)
         {
             if (! await _companyService.CompanyExists(id))
             {
                 return NotFound();
             }
 
-            return await _companyService.GetCompanyById(id);
+            var company = (await _companyService.GetCompanyById(id));
+            var companyToShow = _mapper.Map<CompanyToShow>(company);
+
+            //return company;
+            return companyToShow;
         }
 
         [HttpGet("addresses")]
-        public async Task<ActionResult<List<CompanyAddress>>> GetCompany()
+        public async Task<ActionResult<List<CompanyAddress>>> GetAllAddresses()
         {
 
             return await _companyService.GetAllAddresses();

@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using ContactsManager.Core.Dtos;
 using ContactsManager.Core.Entities;
 using ContactsManager.Core.Interfaces;
+using ContactsManager.Core.ProfilesAutoMapping;
 using ContactsManager.Core.Services;
 using ContactsManager.Data;
 using Microsoft.AspNetCore.Builder;
@@ -30,10 +33,15 @@ namespace ContactsManager.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .AddJsonOptions(
+                    options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                                )
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ContactsManagerContext>(o =>
-                o.UseSqlServer(Configuration["connectionStrings:ContactsManagerConnectionString"]));
+                o.UseLazyLoadingProxies()
+                .UseSqlServer(Configuration["connectionStrings:ContactsManagerConnectionString"]));
 
             //services.AddDbContext<ContactsManagerDbContext>(opt =>
             //    opt.UseInMemoryDatabase("ContactsManager"));
@@ -44,6 +52,16 @@ namespace ContactsManager.API
             services.AddTransient<IContactCompanyRelationshipRepository, ContactCompanyRelationshipRepository>();
             services.AddTransient<ICompanyService, CompanyService>();
             services.AddTransient<IContactService, ContactService>();
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new ContactsManagerProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            //services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

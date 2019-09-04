@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Xunit;
 using ContactsManager.Core.Interfaces;
 using ContactsManager.Core.Entities;
+using AutoMapper;
+using ContactsManager.Core.ProfilesAutoMapping;
 
 namespace ContactsManager.Tests
 {
@@ -13,10 +15,15 @@ namespace ContactsManager.Tests
     {
         private CompanyController _controller;
         private ICompanyService _service;
+        private IMapper _mapper;
         public CompanyControllerTest()
         {
             _service = new CompanyServiceFake();
-            _controller = new CompanyController(_service);
+            _mapper = new Mapper(new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new ContactsManagerProfile());
+            }));
+            _controller = new CompanyController(_service, _mapper);
         }
 
         [Fact]
