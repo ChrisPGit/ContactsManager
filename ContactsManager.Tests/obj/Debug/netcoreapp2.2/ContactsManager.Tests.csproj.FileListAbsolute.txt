@@ -17,3 +17,5 @@ C:\Users\chris\source\repos\ContactsManager\ContactsManager.Tests\obj\Debug\netc
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.Tests\obj\Debug\netcoreapp2.2\ContactsManager.Tests.pdb
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.Tests\bin\Debug\netcoreapp2.2\ContactsManager.Data.dll
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.Tests\bin\Debug\netcoreapp2.2\ContactsManager.Data.pdb
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Tests\bin\Debug\netcoreapp2.2\ContactsManager.Core.dll
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Tests\bin\Debug\netcoreapp2.2\ContactsManager.Core.pdb

@@ -15,3 +15,5 @@ C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Debug\netcor
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Debug\netcoreapp2.2\ContactsManager.Data.pdb
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Debug\netcoreapp2.2\ContactsManager.API.csprojAssemblyReference.cache
 C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\obj\Debug\netcoreapp2.2\ContactsManager.API.csproj.CopyComplete
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Debug\netcoreapp2.2\ContactsManager.Core.dll
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.API\bin\Debug\netcoreapp2.2\ContactsManager.Core.pdb

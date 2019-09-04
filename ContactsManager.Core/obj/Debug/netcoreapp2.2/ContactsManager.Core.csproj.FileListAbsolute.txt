@@ -1,0 +1,10 @@
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\obj\Debug\netcoreapp2.2\ContactsManager.Core.csproj.CoreCompileInputs.cache
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\obj\Debug\netcoreapp2.2\ContactsManager.Core.AssemblyInfoInputs.cache
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\obj\Debug\netcoreapp2.2\ContactsManager.Core.AssemblyInfo.cs
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\bin\Debug\netcoreapp2.2\ContactsManager.Core.deps.json
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\bin\Debug\netcoreapp2.2\ContactsManager.Core.dll
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\bin\Debug\netcoreapp2.2\ContactsManager.Core.runtimeconfig.json
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\bin\Debug\netcoreapp2.2\ContactsManager.Core.runtimeconfig.dev.json
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\bin\Debug\netcoreapp2.2\ContactsManager.Core.pdb
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\obj\Debug\netcoreapp2.2\ContactsManager.Core.dll
+C:\Users\chris\source\repos\ContactsManager\ContactsManager.Core\obj\Debug\netcoreapp2.2\ContactsManager.Core.pdb

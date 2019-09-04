@@ -1,6 +1,6 @@
-﻿using ContactsManager.API.Dtos;
-using ContactsManager.Data;
-using ContactsManager.API.Services;
+﻿using ContactsManager.Core.Dtos;
+using ContactsManager.Core.Entities;
+using ContactsManager.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +12,17 @@ namespace ContactsManager.API.Controllers
     [ApiController]
     public class CompanyController : Controller
     {
-        private ICompanyRepository _companyRepository;
+        private ICompanyService _companyService;
 
-        public CompanyController(ICompanyRepository companyRepository)
+        public CompanyController(ICompanyService companyRepository)
         {
-            _companyRepository = companyRepository;
+            _companyService = companyRepository;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Company>>> GetAllCompanies()
         {
-            var companies = await _companyRepository.GetAllCompanies();
+            var companies = await _companyService.GetAllCompanies();
 
             if (!companies.Any())
             {
@@ -35,19 +35,19 @@ namespace ContactsManager.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Company>> GetCompany(int id)
         {
-            if (! await _companyRepository.CompanyExists(id))
+            if (! await _companyService.CompanyExists(id))
             {
                 return NotFound();
             }
 
-            return await _companyRepository.GetCompanyById(id);
+            return await _companyService.GetCompanyById(id);
         }
 
         [HttpGet("addresses")]
         public async Task<ActionResult<List<CompanyAddress>>> GetCompany()
         {
 
-            return await _companyRepository.GetAllAddresses();
+            return await _companyService.GetAllAddresses();
         }
 
         [HttpPost]
@@ -58,26 +58,7 @@ namespace ContactsManager.API.Controllers
                 return BadRequest();
             }
 
-            var company = new Company
-            {
-                Name = companyForCreation.Name,
-                Esite = companyForCreation.ESite,
-                HomePhone = companyForCreation.HomePhone,
-                Vat = companyForCreation.VAT
-            };
-
-            company.CompanyAddresses.Add(new CompanyAddress
-            {
-                CompanyAdressTypeId = CompanyAddressTypePartial.CompanyAddressTypeEnum.PrincipalAddress,
-                Address = companyForCreation.PrincipalAddress,
-                ZipCode = companyForCreation.ZipCode,
-                City = companyForCreation.City,
-                Country = companyForCreation.Country
-            });
-
-            await _companyRepository.CreateCompany(company);
-
-            if(!await _companyRepository.Save())
+            if(!await _companyService.CreateCompany(companyForCreation))
             {
                 return StatusCode(500, "A Problem happened while handling your request"); 
             }
@@ -86,9 +67,9 @@ namespace ContactsManager.API.Controllers
         }
 
         [HttpPost("{companyId}")]
-        public async Task<ActionResult<CompanyAddress>> AddAddress(int companyId, CompanyAddress companyAddress)
+        public async Task<ActionResult<CompanyAddressForCreation>> AddAddress(int companyId, CompanyAddressForCreation companyAddress)
         {
-            if (! await _companyRepository.CompanyExists(companyId))
+            if (! await _companyService.CompanyExists(companyId))
             {
                 return NotFound();
             }
@@ -100,9 +81,7 @@ namespace ContactsManager.API.Controllers
 
             companyAddress.CompanyId = companyId;
 
-            await _companyRepository.AddAddress(companyAddress);
-
-            if (! await _companyRepository.Save())
+            if (!await _companyService.AddAddress(companyAddress))
             {
                 return StatusCode(500, "A Problem happened while handling your request");
             }
@@ -110,10 +89,10 @@ namespace ContactsManager.API.Controllers
             return Ok();
         }
 
-        [HttpPut("update/{companyId}")]
-        public async Task<ActionResult<Company>> UpdateCompany(int companyId, Company company)
+        [HttpPut("update")]
+        public async Task<ActionResult<Company>> UpdateCompany(Company company)
         {
-            if (! await _companyRepository.CompanyExists(companyId))
+            if (!await _companyService.CompanyExists(company.Id))
             {
                 return NotFound();
             }
@@ -123,11 +102,7 @@ namespace ContactsManager.API.Controllers
                 return BadRequest();
             }
 
-            company.Id = companyId;
-
-            _companyRepository.UpdateCompany(company);
-
-            if(!await _companyRepository.Save())
+            if(!await _companyService.UpdateCompany(company))
             {
                 return StatusCode(500, "A Problem happened while handling your request");
             }
@@ -135,10 +110,10 @@ namespace ContactsManager.API.Controllers
             return Ok();
         }
 
-        [HttpPut("updateaddress/{companyAddressId}")]
-        public async Task<ActionResult<Company>> UpdateCompanyAddress(int companyAddressId, CompanyAddress companyAddress)
+        [HttpPut("updateaddress")]
+        public async Task<ActionResult<Company>> UpdateCompanyAddress(CompanyAddress companyAddress)
         {
-            if (!await _companyRepository.CompanyExists(companyAddress.CompanyId))
+            if (!await _companyService.CompanyExists(companyAddress.CompanyId))
             {
                 return NotFound();
             }
@@ -148,11 +123,7 @@ namespace ContactsManager.API.Controllers
                 return BadRequest();
             }
 
-            companyAddress.Id = companyAddressId;
-
-            _companyRepository.UpdateCompanyAddress(companyAddress);
-
-            if (!await _companyRepository.Save())
+            if (!await _companyService.UpdateCompanyAddress(companyAddress))
             {
                 return StatusCode(500, "A Problem happened while handling your request");
             }

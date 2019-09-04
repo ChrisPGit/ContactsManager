@@ -4439,10 +4439,26 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "ContactsManager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.6",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6"
+        },
+        "compile": {
+          "bin/placeholder/ContactsManager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ContactsManager.Core.dll": {}
+        }
+      },
       "ContactsManager.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "ContactsManager.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.6",
           "Microsoft.EntityFrameworkCore.Design": "2.2.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6"
@@ -12084,6 +12100,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "ContactsManager.Core/1.0.0": {
+      "type": "project",
+      "path": "../ContactsManager.Core/ContactsManager.Core.csproj",
+      "msbuildProject": "../ContactsManager.Core/ContactsManager.Core.csproj"
+    },
     "ContactsManager.Data/1.0.0": {
       "type": "project",
       "path": "../ContactsManager.Data/ContactsManager.Data.csproj",
@@ -12092,6 +12113,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "ContactsManager.Core >= 1.0.0",
       "ContactsManager.Data >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -12135,6 +12157,9 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+            "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj": {
+              "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj"
+            },
             "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj": {
               "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj"
             }

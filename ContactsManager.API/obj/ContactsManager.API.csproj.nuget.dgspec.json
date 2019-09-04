@@ -32,6 +32,9 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
+              "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj": {
+                "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj"
+              },
               "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj": {
                 "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj"
               }
@@ -91,6 +94,72 @@
         }
       }
     },
+    "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj",
+        "projectName": "ContactsManager.Core",
+        "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -118,7 +187,11 @@
         },
         "frameworks": {
           "netcoreapp2.2": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj": {
+                "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

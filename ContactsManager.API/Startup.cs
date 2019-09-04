@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContactsManager.API.Helpers;
-using ContactsManager.API.Services;
+using ContactsManager.Core.Entities;
+using ContactsManager.Core.Interfaces;
+using ContactsManager.Core.Services;
 using ContactsManager.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,8 +38,13 @@ namespace ContactsManager.API
             //services.AddDbContext<ContactsManagerDbContext>(opt =>
             //    opt.UseInMemoryDatabase("ContactsManager"));
 
-            services.AddTransient<ICompanyRepository, CompanyRepository>();
-            services.AddTransient<IContactRepository, ContactRepository>();
+            services.AddTransient<IRepository<Company>, Repository<Company>>();
+            services.AddTransient<IRepository<Contact>, Repository<Contact>>();
+            services.AddTransient<IRepository<CompanyAddress>, Repository<CompanyAddress>>();
+            services.AddTransient<ICompanyService, CompanyService>();
+            services.AddTransient<IContactService, ContactService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

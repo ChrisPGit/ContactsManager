@@ -9,6 +9,7 @@
       "ContactsManager.Tests/1.0.0": {
         "dependencies": {
           "ContactsManager.API": "1.0.0",
+          "ContactsManager.Core": "1.0.0",
           "ContactsManager.Data": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.0.1",
           "xunit": "2.4.0",
@@ -405,13 +406,22 @@
       },
       "ContactsManager.API/1.0.0": {
         "dependencies": {
+          "ContactsManager.Core": "1.0.0",
           "ContactsManager.Data": "1.0.0"
         },
         "runtime": {
           "ContactsManager.API.dll": {}
         }
       },
+      "ContactsManager.Core/1.0.0": {
+        "runtime": {
+          "ContactsManager.Core.dll": {}
+        }
+      },
       "ContactsManager.Data/1.0.0": {
+        "dependencies": {
+          "ContactsManager.Core": "1.0.0"
+        },
         "runtime": {
           "ContactsManager.Data.dll": {}
         }
@@ -593,6 +603,11 @@
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
     "ContactsManager.API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ContactsManager.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

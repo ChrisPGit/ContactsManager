@@ -5024,6 +5024,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "ContactsManager.Core": "1.0.0",
           "ContactsManager.Data": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.6",
           "Microsoft.EntityFrameworkCore.Design": "2.2.6",
@@ -5036,10 +5037,26 @@
           "bin/placeholder/ContactsManager.API.dll": {}
         }
       },
+      "ContactsManager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.6",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6"
+        },
+        "compile": {
+          "bin/placeholder/ContactsManager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ContactsManager.Core.dll": {}
+        }
+      },
       "ContactsManager.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "ContactsManager.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.6",
           "Microsoft.EntityFrameworkCore.Design": "2.2.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6"
@@ -13654,6 +13671,11 @@
       "path": "../ContactsManager.API/ContactsManager.API.csproj",
       "msbuildProject": "../ContactsManager.API/ContactsManager.API.csproj"
     },
+    "ContactsManager.Core/1.0.0": {
+      "type": "project",
+      "path": "../ContactsManager.Core/ContactsManager.Core.csproj",
+      "msbuildProject": "../ContactsManager.Core/ContactsManager.Core.csproj"
+    },
     "ContactsManager.Data/1.0.0": {
       "type": "project",
       "path": "../ContactsManager.Data/ContactsManager.Data.csproj",
@@ -13663,6 +13685,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "ContactsManager.API >= 1.0.0",
+      "ContactsManager.Core >= 1.0.0",
       "ContactsManager.Data >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.6",
       "Microsoft.NET.Test.Sdk >= 16.0.1",
@@ -13706,6 +13729,9 @@
           "projectReferences": {
             "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.API\\ContactsManager.API.csproj": {
               "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.API\\ContactsManager.API.csproj"
+            },
+            "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj": {
+              "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Core\\ContactsManager.Core.csproj"
             },
             "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj": {
               "projectPath": "C:\\Users\\chris\\source\\repos\\ContactsManager\\ContactsManager.Data\\ContactsManager.Data.csproj"

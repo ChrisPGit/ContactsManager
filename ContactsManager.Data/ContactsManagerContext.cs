@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactsManager.Core.Entities;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
